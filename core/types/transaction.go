@@ -222,6 +222,9 @@ func (tx *Transaction) setDecoded(inner TxData, size uint64) {
 	}
 }
 
+// Inner returns a reference to the inner field
+func (tx *Transaction) Inner() *TxData { return &tx.inner }
+
 func sanityCheckSignature(v *big.Int, r *big.Int, s *big.Int, maybeProtected bool) error {
 	if isProtectedV(v) && !maybeProtected {
 		return ErrUnexpectedProtection
