@@ -74,7 +74,6 @@ func NewTx(inner TxData) *Transaction {
 // This is implemented by DynamicFeeTx, LegacyTx and AccessListTx.
 type TxData interface {
 	txType() byte // returns the type ID
-	Type() byte // returns the type ID
 	copy() TxData // creates a deep copy and initializes all fields
 
 	chainID() *big.Int
