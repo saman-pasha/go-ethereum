@@ -410,7 +410,7 @@ func (tx *Transaction) UnmarshalJSON(input []byte) error {
 		}
 
 	default:
-		return nil // ErrTxTypeNotSupported
+		// return ErrTxTypeNotSupported
 	}
 
 	// Now set the inner transaction.
